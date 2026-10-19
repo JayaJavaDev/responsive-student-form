@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <span class="eyebrow">STUDENT PORTAL</span>
+            <h1>Student Registration</h1>
+            <p>Enter student details to add a new registration.</p>
+        </header>
+
+        <section class="form-card" aria-labelledby="form-title">
+            <h2 id="form-title">Personal Information</h2>
+
+            <form id="studentForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName"
+                               name="firstName" placeholder="Enter first name"
+                               autocomplete="given-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName"
+                               name="lastName" placeholder="Enter last name"
+                               autocomplete="family-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="name@example.com"
+                               autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode"
+                               placeholder="Enter pincode"
+                               inputmode="numeric" pattern="[0-9]{6}"
+                               maxlength="6" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address"
+                                  placeholder="Enter your full address"
+                                  autocomplete="street-address"
+                                  rows="3" required></textarea>
+                    </div>
+
+                    <fieldset class="form-group gender-group">
+                        <legend>Gender</legend>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="gender"
+                                       value="Female" required>
+                                Female
+                            </label>
+                            <label>
+                                <input type="radio" name="gender"
+                                       value="Male">
+                                Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender"
+                                       value="Other">
+                                Other
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state"
+                               placeholder="Enter state" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country"
+                               placeholder="Enter country" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Add Student <span aria-hidden="true">→</span>
+                </button>
+            </form>
+        </section>
+
+        <section class="table-card" aria-labelledby="table-title">
+            <div class="table-heading">
+                <div>
+                    <span class="eyebrow">RECORDS</span>
+                    <h2 id="table-title">Registered Students</h2>
+                </div>
+                <span class="student-count" id="studentCount"
+                      aria-live="polite">0 Students</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Pincode</th>
+                            <th>Gender</th>
+                            <th>State</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- JavaScript inserts student rows here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Load JavaScript after the HTML content -->
+    <script src="script.js"></script>
+</body>
+</html>
+
